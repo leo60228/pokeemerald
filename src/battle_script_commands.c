@@ -4165,7 +4165,22 @@ static void Cmd_getexp(void)
             bool32 wasSentOut = ((gBattleStruct->expSentInMons & gBitTable[*expMonId]) != 0);
             holdEffect = GetMonHoldEffect(&gPlayerParty[*expMonId]);
 
-            if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !wasSentOut && !IsGen6ExpShareEnabled())
+            if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+            {
+                *(&gBattleStruct->sentInPokes) >>= 1;
+                MonGainEVs(&gPlayerParty[gBattleStruct->expGetterMonId], gBattleMons[gBattlerFainted].species);
+                gBattleScripting.getexpState = 5;
+                gBattleMoveDamage = 0; // used for exp
+            }
+            else if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) >= GetLevelCap())
+            {
+                gBattleMoveDamage = 1; // If mon is above level cap, it gets 1 exp, but still gains EVs
+                MonGainEVs(&gPlayerParty[gBattleStruct->expGetterMonId], gBattleMons[gBattlerFainted].species);
+                // EVs won't be applied until next level up. TODO: Update this mechanic to match newer games
+                gBattleStruct->sentInPokes >>= 1;
+                gBattleScripting.getexpState++;
+            }
+            else if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !wasSentOut && !IsGen6ExpShareEnabled())
              || GetMonData(&gPlayerParty[*expMonId], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
             {
                 gBattleScripting.getexpState = 5;
@@ -7321,7 +7336,7 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     }
     else
     {
-        const struct TrainerMon *party = gTrainers[trainerId].party;
+        const struct DynasticTrainer *party = gTrainers[trainerId].party;
         lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
 
         for (; gTrainerMoneyTable[i].classId != 0xFF; i++)

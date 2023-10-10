@@ -11,7 +11,7 @@
 #include "constants/battle.h"
 
 
-static const struct TrainerMon sTestParty1[] =
+static const struct DynasticTrainer sTestParty1[] =
 {
     {
         .species = SPECIES_WOBBUFFET,

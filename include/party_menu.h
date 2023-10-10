@@ -48,6 +48,7 @@ void LoadHeldItemIcons(void);
 void DrawHeldItemIconsForTrade(u8 *partyCounts, u8 *partySpriteIds, u8 whichParty);
 void LoadPartyMenuAilmentGfx(void);
 void CB2_ShowPartyMenuForItemUse(void);
+void CB2_ShowPartyMenuForItemUseFromField(void);
 void ItemUseCB_BattleScript(u8 taskId, TaskFunc task);
 void ItemUseCB_BattleChooseMove(u8 taskId, TaskFunc task);
 void ItemUseCB_Medicine(u8 taskId, TaskFunc task);
@@ -61,6 +62,8 @@ bool8 MonKnowsMove(struct Pokemon *mon, u16 move);
 bool8 BoxMonKnowsMove(struct BoxPokemon *boxMon, u16 move);
 void ItemUseCB_TMHM(u8 taskId, TaskFunc task);
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task);
+void ItemUseCB_CandyBox(u8 taskId, TaskFunc task);
+
 void ItemUseCB_SacredAsh(u8 taskId, TaskFunc task);
 void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task);
 void ItemUseCB_FormChange(u8 taskId, TaskFunc task);

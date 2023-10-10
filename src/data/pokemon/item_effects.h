@@ -510,6 +510,7 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
 
     // Candy
     [ITEM_RARE_CANDY]         = gItemEffect_RareCandy,
+    [ITEM_INFINATE_CANDY]     = gItemEffect_RareCandy,
     [ITEM_EXP_CANDY_XS]       = gItemEffect_RareCandy,
     [ITEM_EXP_CANDY_S]        = gItemEffect_RareCandy,
     [ITEM_EXP_CANDY_M]        = gItemEffect_RareCandy,

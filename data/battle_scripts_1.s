@@ -7248,6 +7248,19 @@ BattleScript_EarthEaterActivates::
 BattleScript_EarthEaterRet:
 	return
 
+BattleScript_LooseStoneActivates::
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_SHORT
+	playmoveanimation BS_ATTACKER, MOVE_STEALTH_ROCK
+	setstealthrock BattleScript_LooseStoneRet
+	printstring STRINGID_POINTEDSTONESFLOAT
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_LooseStoneRet:
+	copybyte sBATTLER, gBattlerTarget
+	copybyte gBattlerTarget, gBattlerAttacker
+	copybyte gBattlerAttacker, sBATTLER
+	return
+
 BattleScript_PerishSongCountGoesDown::
 	printstring STRINGID_PKMNPERISHCOUNTFELL
 	waitmessage B_WAIT_TIME_LONG

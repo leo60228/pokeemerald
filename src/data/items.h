@@ -9350,7 +9350,7 @@ const struct Item gItems[] =
 
     [ITEM_SCROLL_OF_DARKNESS] =
     {
-        .name = _("ScrllOfDrknss"),
+        .name = _("ScrllOfDrknes"),
         .price = 0,
         .description = sScrollOfDarknessDesc,
         .importance = 1,
@@ -9361,7 +9361,7 @@ const struct Item gItems[] =
 
     [ITEM_SCROLL_OF_WATERS] =
     {
-        .name = _("ScrollOfWatrs"),
+        .name = _("ScrollOfWater"),
         .price = 0,
         .description = sScrollOfWatersDesc,
         .importance = 1,
@@ -9648,5 +9648,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
+    },
+
+    [ITEM_INFINATE_CANDY] =
+    {
+        .name = _("InfinateCandy"),
+        .price = 0,
+        .description = sInfinateCandyDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
+        .flingPower = 0,
     },
 };

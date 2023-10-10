@@ -77,6 +77,7 @@ static const u8 sWindowVerticalScrollSpeeds[] = {
     [OPTIONS_TEXT_SPEED_SLOW] = 1,
     [OPTIONS_TEXT_SPEED_MID] = 2,
     [OPTIONS_TEXT_SPEED_FAST] = 4,
+    [OPTIONS_TEXT_SPEED_INSTANT] = 4,
 };
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
@@ -319,10 +320,12 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
 void RunTextPrinters(void)
 {
     int i;
+    u16 temp;
 
-    if (!gDisableTextPrinters)
+    do
     {
-        for (i = 0; i < WINDOWS_MAX; ++i)
+        int numEmpty = 0;
+        for (i = 0; i < 0x20; ++i)
         {
             if (sTextPrinters[i].active)
             {
@@ -338,10 +341,16 @@ void RunTextPrinters(void)
                 case RENDER_FINISH:
                     sTextPrinters[i].active = FALSE;
                     break;
-                }
+                 }
+            }
+            else
+            {
+                numEmpty++;
             }
         }
-    }
+        if(numEmpty == 0x20)
+            return;
+    } while(gSaveBlock2Ptr->optionsTextSpeed == OPTIONS_TEXT_SPEED_INSTANT);
 }
 
 bool16 IsTextPrinterActive(u8 id)

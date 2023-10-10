@@ -212,6 +212,12 @@ LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	releaseall
 	end
 
+LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDexNew::
+    lockall
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	return
+
 LittlerootTown_ProfessorBirchsLab_EventScript_MayUpgradeComment::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool, MSGBOX_DEFAULT
 	closemessage

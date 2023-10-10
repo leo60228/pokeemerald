@@ -466,7 +466,7 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT) && gSaveBlock2Ptr->gameDifficulty < DIFFICULTY_KAIZO)
     {
         selection ^= 1;
         sArrowPressed = TRUE;

@@ -1789,7 +1789,7 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
 static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
 {
     u16 trainerId;
-    const struct TrainerMon *party;
+    const struct DynasticTrainer *party;
     u8 monId;
     const u8 *speciesName;
 

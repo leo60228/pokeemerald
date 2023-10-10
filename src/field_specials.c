@@ -4205,3 +4205,27 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+void DeleteRandomStarters (void)
+{
+	u8 i = 0;
+	for (i = 0; i < 3; i++)
+	{
+		ZeroBoxMonAt(TOTAL_BOXES_COUNT-1, (IN_BOX_COUNT-1-3) + i); //delete the three random starters in the last box and 3 spot before the last spot (where the level O Rattata is)
+	}
+}
+
+void GenerateRandomStarters (void)
+{
+    struct Pokemon mon;
+	
+    u8 i = 0;
+	
+    DeleteRandomStarters();
+	
+    for (i = 0; i < 3; i++) // Generate 3 random Pokémon for the Random starters option (last box, 3 spot before the last spot (where the level 0 Rattata is)
+    {
+        CreateMon(&mon, getRandomSpecies(), 0, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        SendMonToPCAt(&mon, TOTAL_BOXES_COUNT-1, (IN_BOX_COUNT-1-3) + i);
+    }	
+}

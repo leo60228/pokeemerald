@@ -10,6 +10,7 @@
 #include "palette.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "scanline_effect.h"
 #include "sound.h"
 #include "sprite.h"
@@ -110,12 +111,70 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-static const u16 sStarterMon[STARTER_MON_COUNT] =
+static const u16 sStarterMonKanto[STARTER_MON_COUNT] =
+{
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+};
+
+static const u16 sStarterMonJohto[STARTER_MON_COUNT] =
+{
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+};
+
+static const u16 sStarterMonHoenn[STARTER_MON_COUNT] =
 {
     SPECIES_TREECKO,
     SPECIES_TORCHIC,
     SPECIES_MUDKIP,
 };
+
+static const u16 sStarterMonSinnoh[STARTER_MON_COUNT] =
+{
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_PIPLUP,
+};
+
+static const u16 sStarterMonUnova[STARTER_MON_COUNT] =
+{
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_OSHAWOTT,
+};
+
+static const u16 sStarterMonKalos[STARTER_MON_COUNT] =
+{
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_FROAKIE,
+};
+
+static const u16 sStarterMonAlola[STARTER_MON_COUNT] =
+{
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_POPPLIO,
+};
+
+static const u16 sStarterMonGalar[STARTER_MON_COUNT] =
+{
+    SPECIES_GROOKEY,
+    SPECIES_SCORBUNNY,
+    SPECIES_SOBBLE,
+};
+
+static const u16 sStarterMonPaldea[STARTER_MON_COUNT] =
+{
+    SPECIES_SPRIGATITO,
+    SPECIES_FUECOCO,
+    SPECIES_QUAXLY,
+};
+
+
 
 static const struct BgTemplate sBgTemplates[3] =
 {
@@ -347,12 +406,43 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
     .callback = SpriteCB_StarterPokemon
 };
 
+
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
+
+    u8 starterRegionSetting = gSaveBlock2Ptr->chosenStarter;
+
     if (chosenStarterId > STARTER_MON_COUNT)
-        chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+        chosenStarterId = STARTER_MON_COUNT_KANTO;
+    if (GetBoxMonDataAt(TOTAL_BOXES_COUNT-1, IN_BOX_COUNT-1, MON_DATA_SMART) != 1)
+    {
+        switch (starterRegionSetting)
+        {
+        case STARTER_MON_COUNT_KANTO:
+            return sStarterMonKanto[chosenStarterId];
+        case STARTER_MON_COUNT_JOHTO:
+            return sStarterMonJohto[chosenStarterId];
+        case STARTER_MON_COUNT_HOENN:
+            return sStarterMonHoenn[chosenStarterId];
+        case STARTER_MON_COUNT_SINNOH:
+            return sStarterMonSinnoh[chosenStarterId];
+        case STARTER_MON_COUNT_UNOVA:
+            return sStarterMonUnova[chosenStarterId];
+        case STARTER_MON_COUNT_KALOS:
+            return sStarterMonKalos[chosenStarterId];
+        case STARTER_MON_COUNT_ALOLA:
+            return sStarterMonAlola[chosenStarterId];
+        case STARTER_MON_COUNT_GALAR:
+            return sStarterMonGalar[chosenStarterId];
+        case STARTER_MON_COUNT_PALDEA:
+            return sStarterMonPaldea[chosenStarterId];
+        }
+    }
+    else
+    {
+        return GetBoxMonDataAt(TOTAL_BOXES_COUNT-1, (IN_BOX_COUNT-1-3) + chosenStarterId, MON_DATA_SPECIES);
+    }
 }
 
 static void VblankCB_StarterChoose(void)

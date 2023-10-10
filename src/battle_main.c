@@ -1915,7 +1915,7 @@ u32 GeneratePersonalityForGender(u32 gender, u32 species)
         return speciesInfo->genderRatio / 2;
 }
 
-void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon *partyEntry)
+void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct DynasticTrainer *partyEntry)
 {
     bool32 noMoveSet = TRUE;
     u32 j;
@@ -1967,7 +1967,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
         {
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
-            const struct TrainerMon *partyData = trainer->party;
+            const struct DynasticTrainer *partyData = trainer->party;
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
 
@@ -2043,6 +2043,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
+        u32 nameHash = 0;
+    u32 personalityValue;
+    u8 fixedIV;
+    s32 i, j = 0;
+    u8 monsCount;
+    u8 level;
+    u8 friendship;
+    u8 difficultySetting = gSaveBlock2Ptr->gameDifficulty;
+    u8 partyData;
+    
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;

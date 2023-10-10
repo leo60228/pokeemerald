@@ -76,6 +76,8 @@ static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 static void ItemUseOnFieldCB_Honey(u8 taskId);
 static bool32 CannotUseBagBattleItem(u16 itemId);
+static void Task_InitCandyBoxFromField(u8 taskId);
+static void Task_ItemUseOutOfBattleCandyBox(u8 taskId);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -823,6 +825,30 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_RareCandy;
     SetUpItemUseCallback(taskId);
+}
+
+static void Task_InitCandyBoxFromField(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        gItemUseCB = ItemUseCB_CandyBox;
+        SetMainCallback2(CB2_ShowPartyMenuForItemUseFromField);
+        DestroyTask(taskId);
+    }
+}
+
+void ItemUseOutOfBattle_CandyBox(u8 taskId)
+{
+    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+    {
+        gItemUseCB = ItemUseCB_CandyBox;
+        SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)

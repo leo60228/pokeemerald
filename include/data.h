@@ -35,7 +35,7 @@ struct MonCoords
 #define TRAINER_PARTY_EVS(hp, atk, def, speed, spatk, spdef) ((const u8[6]){hp,atk,def,spatk,spdef,speed})
 #define TRAINER_PARTY_NATURE(nature) (nature+1)
 
-struct TrainerMon
+struct TrainerMon //just here so battle_main.c and battle_main.c Dont complain!
 {
     const u8 *nickname;
     const u8 *ev;
@@ -52,12 +52,32 @@ struct TrainerMon
     bool8 isShiny : 1;
 };
 
+struct DynasticTrainer
+{
+    const u8 *nickname;
+    const u8 *ev;
+    u32 iv;
+    u16 species;
+    u16 heldItem;
+    u16 moves[MAX_MON_MOVES];
+    u8 ivs[NUM_STATS];
+    u8 evs[NUM_STATS];
+    u8 lvl;
+    u8 ball;
+    u16 ability;
+    u32 personality;
+    u8 friendship;
+    u8 nature : 5;
+    bool8 gender:2;
+    bool8 isShiny:1;
+};
+
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
 
 struct Trainer
 {
     /*0x00*/ u32 aiFlags;
-    /*0x04*/ const struct TrainerMon *party;
+             const struct DynasticTrainer *party;
     /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
     /*0x10*/ u8 trainerClass;
     /*0x11*/ u8 encounterMusic_gender; // last bit is gender

@@ -904,6 +904,14 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	giveitem ITEM_INFINATE_CANDY, 1
+	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
+	giveitem ITEM_RARE_CANDY, 100
+	waitfanfare
+	msgbox LittlerootTown_Text_ExplainInfinateCandy, MSGBOX_DEFAULT
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -946,6 +954,12 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "RUNNING SHOES to run extra-fast!\p"
 	.string "“Slip on these RUNNING SHOES and race\n"
 	.string "in the great outdoors!”$"
+
+LittlerootTown_Text_ExplainInfinateCandy:
+	.string "The Infinate Candy is the hack creators\n"
+	.string "way to making grinding not tedious.\p"
+	.string "The Infinate Candy will be located in\n"
+	.string "Your Bag.$\p"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"

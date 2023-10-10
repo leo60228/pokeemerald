@@ -21,6 +21,7 @@ Route101_EventScript_HideMapNamePopup::
 
 Route101_EventScript_StartBirchRescue::
 	lockall
+	special GenerateRandomStarters
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
@@ -228,6 +229,7 @@ Route101_EventScript_BirchsBag::
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
+	copyvar VAR_0x800A, VAR_STARTER_GEN
 	special ChooseStarter
 	waitstate
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer

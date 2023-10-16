@@ -3202,11 +3202,12 @@ static const struct DynasticTrainer sParty_Drake[] = {
     .moves = {MOVE_FLAMETHROWER, MOVE_DRAGON_CLAW, MOVE_ROCK_SLIDE, MOVE_CRUNCH}
     }
 };
-
-static const struct DynasticTrainer sParty_Roxanne1[] = {
+//Roxanne Battles.
+static const struct DynasticTrainer sParty_Roxanne1[] = { //Normal and Easy Roxanne in one.
+    //Alola Geodude
     {
     .species = SPECIES_GEODUDE_ALOLAN,
-    .lvl = 15,
+    .lvl = 16,
     .heldItem = ITEM_SAFETY_GOGGLES,
     .nature = NATURE_JOLLY,
     .moves =
@@ -3216,13 +3217,15 @@ static const struct DynasticTrainer sParty_Roxanne1[] = {
      MOVE_THUNDER_PUNCH,
      MOVE_EXPLOSION
     },
-    .ivs = {31, 31, 31, 31, 31, 31},
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
     .ability = 1, //Loose Rocks
     .friendship = 255,
     },
+    // Hisui Growlithe
     {
     .species = SPECIES_GROWLITHE_HISUIAN,
-    .lvl = 15,
+    .lvl = 16,
     .heldItem = ITEM_PASSHO_BERRY,
     .nature = NATURE_JOLLY,
     .moves =
@@ -3232,13 +3235,15 @@ static const struct DynasticTrainer sParty_Roxanne1[] = {
      MOVE_THUNDER_FANG,
      MOVE_FIRE_FANG
     },
-    .ivs = {31, 31, 31, 31, 31, 31},
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
     .ability = 1, //Intimidate
     .friendship = 255,
     },
+    //Bonsly
     {
     .species = SPECIES_BONSLY,
-    .lvl = 15,
+    .lvl = 16,
     .heldItem = ITEM_BERRY_JUICE,
     .nature = NATURE_ADAMANT,
     .moves =
@@ -3248,96 +3253,1440 @@ static const struct DynasticTrainer sParty_Roxanne1[] = {
      MOVE_BRICK_BREAK,
      MOVE_BULLDOZE
     },
-    .ivs = {31, 31, 31, 31, 31, 31},
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 252, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
     .ability = 3, //Sand Force
+    .friendship = 255,
+    },
+    //Aron
+    {
+    .species = SPECIES_ARON,
+    .lvl = 16,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_IRON_HEAD,
+     MOVE_BULLDOZE,
+     MOVE_AERIAL_ACE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 252, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Armor
+    .friendship = 255,
+    },
+    //Onix
+    {
+    .species = SPECIES_ONIX,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_THUNDER_FANG,
+     MOVE_BREAKING_SWIPE,
+     MOVE_BULLDOZE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 252, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sand Force
+    .friendship = 255,
+    },
+    //Archen
+    {
+    .species = SPECIES_ARCHEN,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_ADAMANT,
+    .moves =
+    {
+     MOVE_THUNDER_FANG,
+     MOVE_ROCK_TOMB,
+     MOVE_AERIAL_ACE,
+     MOVE_ROOST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 252, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Defeatist
     .friendship = 255,
     }
 };
 
+static const struct DynasticTrainer sParty_RoxanneNoEvs1[] = { // These NoEvs Parties can be done easier i just dont have the time right now.
+    //Alola Geodude
+    {
+    .species = SPECIES_GEODUDE_ALOLAN,
+    .lvl = 16,
+    .heldItem = ITEM_SAFETY_GOGGLES,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_BULLDOZE,
+     MOVE_THUNDER_PUNCH,
+     MOVE_EXPLOSION
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Loose Rocks
+    .friendship = 255,
+    },
+    // Hisui Growlithe
+    {
+    .species = SPECIES_GROWLITHE_HISUIAN,
+    .lvl = 16,
+    .heldItem = ITEM_PASSHO_BERRY,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_BULLDOZE,
+     MOVE_THUNDER_FANG,
+     MOVE_FIRE_FANG
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Intimidate
+    .friendship = 255,
+    },
+    //Bonsly
+    {
+    .species = SPECIES_BONSLY,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_ADAMANT,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_TRAILBLAZE,
+     MOVE_BRICK_BREAK,
+     MOVE_BULLDOZE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sand Force
+    .friendship = 255,
+    }
+    //Aron
+    {
+    .species = SPECIES_ARON,
+    .lvl = 16,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_IRON_HEAD,
+     MOVE_BULLDOZE,
+     MOVE_AERIAL_ACE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Armor
+    .friendship = 255,
+    },
+    //Onix
+    {
+    .species = SPECIES_ONIX,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ROCK_TOMB,
+     MOVE_THUNDER_FANG,
+     MOVE_BREAKING_SWIPE,
+     MOVE_BULLDOZE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sand Force
+    .friendship = 255,
+    },
+    //Archen
+    {
+    .species = SPECIES_ARCHEN,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_ADAMANT,
+    .moves =
+    {
+     MOVE_THUNDER_FANG,
+     MOVE_ROCK_TOMB,
+     MOVE_AERIAL_ACE,
+     MOVE_ROOST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Defeatist
+    .friendship = 255,
+    }
+};
+//Hardcore Mode Section
+static const struct DynasticTrainer sParty_RoxanneHardcore1[] = {
+    //Shuckle
+    {
+    .species = SPECIES_SHUCKLE,
+    .lvl = 16,
+    .heldItem = ITEM_LUM_BERRY,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_CURSE,
+     MOVE_ROLLOUT,
+     MOVE_TOXIC,
+     MOVE_STICKY_WEB
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Gluttony
+    .friendship = 255,
+    },
+    //Cacnea
+    {
+    .species = SPECIES_CACNEA,
+    .lvl = 16,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_ADAMANT,
+    .moves =
+    {
+     MOVE_STOMPING_TANTRUM,
+     MOVE_NEEDLE_ARM,
+     MOVE_THUNDER_PUNCH,
+     MOVE_POWER_UP_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sand Rush
+    .friendship = 255,
+    },
+    //Lileep
+    {
+    .species = SPECIES_LILEEP,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_ANCIENT_POWER,
+     MOVE_STOCKPILE,
+     MOVE_MEGA_DRAIN,
+     MOVE_RECOVER
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Storm Drain
+    .friendship = 255,
+    },
+    //Galar Corsola
+    {
+    .species = SPECIES_CORSOLA_GALARIAN,
+    .lvl = 16,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_ANCIENT_POWER,
+     MOVE_HEX,
+     MOVE_BRINE,
+     MOVE_WILL_O_WISP
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Cursed Body
+    .friendship = 255,
+    },
+    //Mawile
+    {
+    .species = SPECIES_MAWILE,
+    .lvl = 16,
+    .heldItem = ITEM_BERRY_JUICE,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_METAL_CLAW,
+     MOVE_ROCK_TOMB,
+     MOVE_THUNDER_PUNCH,
+     MOVE_SUCKER_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sheer Force
+    .friendship = 255,
+    },
+    //Lunatone
+    {
+    .species = SPECIES_LUNATONE,
+    .lvl = 16,
+    .heldItem = ITEM_LUM_BERRY,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_ANCIENT_POWER,
+     MOVE_CONFUSION,
+     MOVE_HIDDEN_POWER, //HP Grass
+     MOVE_ICY_WIND
+    },
+    .ivs = {30, 31, 31, 30, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Levitate
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_Roxanne2[] = { // Unused ATM
+    {
+ 
+    .lvl = 32,
+    .species = SPECIES_GOLEM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
+    },
+    {
+ 
+    .lvl = 35,
+    .species = SPECIES_KABUTO,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 35,
+    .species = SPECIES_ONIX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 37,
+    .species = SPECIES_NOSEPASS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    }
+};
+
+static const struct DynasticTrainer sParty_Roxanne3[] = { // Unused ATM
+    {
+ 
+    .lvl = 37,
+    .species = SPECIES_OMANYTE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
+    },
+    {
+ 
+    .lvl = 37,
+    .species = SPECIES_GOLEM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
+    },
+    {
+ 
+    .lvl = 40,
+    .species = SPECIES_KABUTOPS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 40,
+    .species = SPECIES_ONIX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 42,
+    .species = SPECIES_NOSEPASS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    }
+};
+
+static const struct DynasticTrainer sParty_Roxanne4[] = { // Unused ATM
+    {
+ 
+    .lvl = 42,
+    .species = SPECIES_OMASTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
+    },
+    {
+ 
+    .lvl = 42,
+    .species = SPECIES_GOLEM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
+    },
+    {
+ 
+    .lvl = 45,
+    .species = SPECIES_KABUTOPS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 45,
+    .species = SPECIES_ONIX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 47,
+    .species = SPECIES_NOSEPASS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    }
+};
+
+static const struct DynasticTrainer sParty_Roxanne5[] = { // Unused ATM
+    {
+ 
+    .lvl = 47,
+    .species = SPECIES_AERODACTYL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_SLIDE, MOVE_HYPER_BEAM, MOVE_SUPERSONIC, MOVE_PROTECT}
+    },
+    {
+ 
+    .lvl = 47,
+    .species = SPECIES_GOLEM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FOCUS_PUNCH, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
+    },
+    {
+ 
+    .lvl = 47,
+    .species = SPECIES_OMASTAR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
+    },
+    {
+ 
+    .lvl = 50,
+    .species = SPECIES_KABUTOPS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 50,
+    .species = SPECIES_STEELIX,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
+    },
+    {
+ 
+    .lvl = 52,
+    .species = SPECIES_NOSEPASS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
+    }
+};
+
+//Brawly Section
 static const struct DynasticTrainer sParty_Brawly1[] = {
+    //Breloon
     {
- 
-    .lvl = 16,
-    .species = SPECIES_MACHOP,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_KARATE_CHOP, MOVE_LOW_KICK, MOVE_SEISMIC_TOSS, MOVE_BULK_UP}
-    },
-    {
- 
-    .lvl = 16,
-    .species = SPECIES_MEDITITE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_BULK_UP}
-    },
-    {
- 
-    .lvl = 19,
-    .species = SPECIES_MAKUHITA,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_ARM_THRUST, MOVE_VITAL_THROW, MOVE_REVERSAL, MOVE_BULK_UP}
-    }
-};
-
-static const struct DynasticTrainer sParty_Wattson1[] = {
-    {
- 
-    .lvl = 20,
-    .species = SPECIES_VOLTORB,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_SPARK, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
-    },
-    {
- 
-    .lvl = 20,
-    .species = SPECIES_ELECTRIKE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHOCK_WAVE, MOVE_LEER, MOVE_QUICK_ATTACK, MOVE_HOWL}
-    },
-    {
- 
-    .lvl = 22,
-    .species = SPECIES_MAGNETON,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SUPERSONIC, MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_SONIC_BOOM}
-    },
-    {
- 
-    .lvl = 24,
-    .species = SPECIES_MANECTRIC,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
-    }
-};
-
-static const struct DynasticTrainer sParty_Flannery1[] = {
-    {
- 
-    .lvl = 24,
-    .species = SPECIES_NUMEL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_OVERHEAT, MOVE_TAKE_DOWN, MOVE_MAGNITUDE, MOVE_SUNNY_DAY}
-    },
-    {
- 
-    .lvl = 24,
-    .species = SPECIES_SLUGMA,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_OVERHEAT, MOVE_SMOG, MOVE_LIGHT_SCREEN, MOVE_SUNNY_DAY}
-    },
-    {
- 
+    .species = SPECIES_BRELOOM,
     .lvl = 26,
-    .species = SPECIES_CAMERUPT,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_OVERHEAT, MOVE_TACKLE, MOVE_SUNNY_DAY, MOVE_ATTRACT}
-    },
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
     {
- 
-    .lvl = 29,
-    .species = SPECIES_TORKOAL,
-    .heldItem = ITEM_WHITE_HERB,
-    .moves = {MOVE_OVERHEAT, MOVE_SUNNY_DAY, MOVE_BODY_SLAM, MOVE_ATTRACT}
-    }
+     MOVE_AERIAL_ACE,
+     MOVE_ROCK_TOMB,
+     MOVE_FORCE_PALM,
+     MOVE_SPORE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Technician
+    .friendship = 255,
+    },
+    //Hitmonchan
+    {
+    .species = SPECIES_HITMONCHAN,
+    .lvl = 26,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_SUCKER_PUNCH,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_BULLET_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Iron Fist
+    .friendship = 255,
+    },
+    //Scraggy
+    {
+    .species = SPECIES_SCRAGGY,
+    .lvl = 26,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_BULK_UP,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_KNOCK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 252, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Moxie
+    .friendship = 255,
+    },
+    //Granbull
+    {
+    .species = SPECIES_GRANBULL,
+    .lvl = 26,
+    .heldItem = ITEM_GOLD_TEETH,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_ICE_FANG,
+     MOVE_FIRE_FANG,
+     MOVE_COVET,
+     MOVE_JAW_LOCK
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {152, 100, 252, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Intimidate
+    .friendship = 255,
+    },
+    //Pawmot
+    {
+    .species = SPECIES_PAWMOT,
+    .lvl = 26,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_THUNDER_PUNCH,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_KNOCK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Lucario
+    {
+    .species = SPECIES_LUCARIO,
+    .lvl = 26,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_NAIVE,
+    .moves =
+    {
+     MOVE_FLASH_CANNON,
+     MOVE_DRAIN_PUNCH,
+     MOVE_ICE_PUNCH,
+     MOVE_HIDDEN_POWER //HP Ground
+    },
+    .ivs = {31, 31, 31, 30, 30, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 128, 0, 128, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Inner Focus
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_BrawlyNoEvs1[] = {
+    //Breloon
+    {
+    .species = SPECIES_BRELOOM,
+    .lvl = 26,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_AERIAL_ACE,
+     MOVE_ROCK_TOMB,
+     MOVE_FORCE_PALM,
+     MOVE_SPORE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Technician
+    .friendship = 255,
+    },
+    //Hitmonchan
+    {
+    .species = SPECIES_HITMONCHAN,
+    .lvl = 26,
+    .heldItem = ITEM_MUSCLE_BAND,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_SUCKER_PUNCH,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_BULLET_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Iron Fist
+    .friendship = 255,
+    },
+    //Scraggy
+    {
+    .species = SPECIES_SCRAGGY,
+    .lvl = 26,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_BULK_UP,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_KNOCK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Moxie
+    .friendship = 255,
+    },
+    //Granbull
+    {
+    .species = SPECIES_GRANBULL,
+    .lvl = 26,
+    .heldItem = ITEM_GOLD_TEETH,
+    .nature = NATURE_IMPISH,
+    .moves =
+    {
+     MOVE_ICE_FANG,
+     MOVE_FIRE_FANG,
+     MOVE_COVET,
+     MOVE_JAW_LOCK
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Intimidate
+    .friendship = 255,
+    },
+    //Pawmot
+    {
+    .species = SPECIES_PAWMOT,
+    .lvl = 26,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_THUNDER_PUNCH,
+     MOVE_BRICK_BREAK,
+     MOVE_ICE_PUNCH,
+     MOVE_KNOCK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Lucario
+    {
+    .species = SPECIES_LUCARIO,
+    .lvl = 26,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_NAIVE,
+    .moves =
+    {
+     MOVE_FLASH_CANNON,
+     MOVE_DRAIN_PUNCH,
+     MOVE_ICE_PUNCH,
+     MOVE_HIDDEN_POWER //HP Ground
+    },
+    .ivs = {31, 31, 31, 30, 30, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Inner Focus
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_BrawlyHardcore1[] = {
+    //Hariyama
+    {
+    .species = SPECIES_HARIYAMA,
+    .lvl = 26,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_DRAIN_PUNCH,
+     MOVE_ZEN_HEADBUTT,
+     MOVE_ICE_SPINNER,
+     MOVE_MACH_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Thick Fat
+    .friendship = 255,
+    },
+    //Pawmot
+    {
+    .species = SPECIES_PAWMOT,
+    .lvl = 26,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PLASMA_FISTS,
+     MOVE_CLOSE_COMBAT,
+     MOVE_ICE_PUNCH,
+     MOVE_MACH_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Hawlucha
+    {
+    .species = SPECIES_HAWLUCHA,
+    .lvl = 26,
+    .heldItem = ITEM_NORMAL_GEM,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_FAKE_OUT,
+     MOVE_CLOSE_COMBAT,
+     MOVE_ICE_PUNCH,
+     MOVE_ACROBATICS
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Mold Breaker
+    .friendship = 255,
+    },
+    //Poliwrath
+    {
+    .species = SPECIES_POLIWRATH,
+    .lvl = 26,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_BULK_UP,
+     MOVE_DRAIN_PUNCH,
+     MOVE_ICE_PUNCH,
+     MOVE_LIQUIDATION
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Unseen Fist
+    .friendship = 255,
+    },
+    //Lucario
+    {
+    .species = SPECIES_LUCARIO,
+    .lvl = 26,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_FLASH_CANNON,
+     MOVE_FOCUS_BLAST,
+     MOVE_WATER_PULSE,
+     MOVE_VACUUM_WAVE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Inner Focus
+    .friendship = 255,
+    },
+    //Mienshoa
+    {
+    .species = SPECIES_MIENSHAO,
+    .lvl = 26,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_U_TURN,
+     MOVE_DRAIN_PUNCH,
+     MOVE_ICE_SPINNER,
+     MOVE_VACUUM_WAVE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Regenerator
+    .friendship = 255,
+    },
+};
+
+//Wattson Section
+static const struct DynasticTrainer sParty_Wattson1[] = {
+    //Bellibolt
+    {
+    .species = SPECIES_BELLIBOLT,
+    .lvl = 36,
+    .heldItem = ITEM_SHUCA_BERRY,
+    .nature = NATURE_CALM,
+    .moves =
+    {
+     MOVE_PARABOLIC_CHARGE,
+     MOVE_MUDDY_WATER,
+     MOVE_SLEEP_TALK,
+     MOVE_REST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 0, 0, 252, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Electromorphosis
+    .friendship = 255,
+    },
+    //Toxtricity
+    {
+    .species = SPECIES_TOXTRICITY,
+    .lvl = 36,
+    .heldItem = ITEM_AIR_BALLOON,
+    .nature = NATURE_HASTY,
+    .moves =
+    {
+     MOVE_HYPER_VOICE,
+     MOVE_OVERDRIVE,
+     MOVE_DRAIN_PUNCH,
+     MOVE_POISON_JAB
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 252, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Punk Rock
+    .friendship = 255,
+    },
+    //Magneton
+    {
+    .species = SPECIES_MAGNETON,
+    .lvl = 36,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_FLASH_CANNON,
+     MOVE_DISCHARGE,
+     MOVE_HIDDEN_POWER,
+     MOVE_TRI_ATTACK
+    },
+    .ivs = {31, 31, 31, 30, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 0, 0, 252, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Levitate
+    .friendship = 255,
+    },
+    //Boltund
+    {
+    .species = SPECIES_BOLTUND,
+    .lvl = 36,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ICE_FANG,
+     MOVE_FIRE_FANG,
+     MOVE_THUNDER_FANG,
+     MOVE_JAW_LOCK
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Strong Jaw
+    .friendship = 255,
+    },
+    //Morpeko
+    {
+    .species = SPECIES_MORPEKO,
+    .lvl = 36,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_AURA_WHEEL,
+     MOVE_CRUNCH,
+     MOVE_SEED_BOMB,
+     MOVE_STOMPING_TANTRUM
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Hungry Switch
+    .friendship = 255,
+    },
+    //Kilowattrel
+    {
+    .species = SPECIES_KILOWATTREL,
+    .lvl = 36,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_AIR_SLASH,
+     MOVE_DISCHARGE,
+     MOVE_VOLT_SWITCH,
+     MOVE_HIDDEN_POWER //HP Ice
+    },
+    .ivs = {31, 31, 31, 31, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 252, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Competitive
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_WattsonNoEvs1[] = {
+    //Bellibolt
+    {
+    .species = SPECIES_BELLIBOLT,
+    .lvl = 36,
+    .heldItem = ITEM_SHUCA_BERRY,
+    .nature = NATURE_CALM,
+    .moves =
+    {
+     MOVE_PARABOLIC_CHARGE,
+     MOVE_MUDDY_WATER,
+     MOVE_SLEEP_TALK,
+     MOVE_REST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Electromorphosis
+    .friendship = 255,
+    },
+    //Toxtricity
+    {
+    .species = SPECIES_TOXTRICITY,
+    .lvl = 36,
+    .heldItem = ITEM_AIR_BALLOON,
+    .nature = NATURE_HASTY,
+    .moves =
+    {
+     MOVE_HYPER_VOICE,
+     MOVE_OVERDRIVE,
+     MOVE_DRAIN_PUNCH,
+     MOVE_POISON_JAB
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Punk Rock
+    .friendship = 255,
+    },
+    //Magneton
+    {
+    .species = SPECIES_MAGNETON,
+    .lvl = 36,
+    .heldItem = ITEM_EVIOLITE,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_FLASH_CANNON,
+     MOVE_DISCHARGE,
+     MOVE_HIDDEN_POWER,
+     MOVE_TRI_ATTACK
+    },
+    .ivs = {31, 31, 31, 30, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Levitate
+    .friendship = 255,
+    },
+    //Boltund
+    {
+    .species = SPECIES_BOLTUND,
+    .lvl = 36,
+    .heldItem = ITEM_EXPERT_BELT,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_ICE_FANG,
+     MOVE_FIRE_FANG,
+     MOVE_THUNDER_FANG,
+     MOVE_JAW_LOCK
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Strong Jaw
+    .friendship = 255,
+    },
+    //Morpeko
+    {
+    .species = SPECIES_MORPEKO,
+    .lvl = 36,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_AURA_WHEEL,
+     MOVE_CRUNCH,
+     MOVE_SEED_BOMB,
+     MOVE_STOMPING_TANTRUM
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Hungry Switch
+    .friendship = 255,
+    },
+    //Kilowattrel
+    {
+    .species = SPECIES_KILOWATTREL,
+    .lvl = 36,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_AIR_SLASH,
+     MOVE_DISCHARGE,
+     MOVE_VOLT_SWITCH,
+     MOVE_HIDDEN_POWER //HP Ice
+    },
+    .ivs = {31, 31, 31, 31, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Competitive
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_WattsonHardcore1[] = {
+    //Heliolisk
+    {
+    .species = SPECIES_HELIOLISK,
+    .lvl = 34,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_PARABOLIC_CHARGE,
+     MOVE_HYPER_VOICE,
+     MOVE_FLAMETHROWER,
+     MOVE_GRASS_KNOT
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Dry Skin
+    .friendship = 255,
+    },
+    //Electivire
+    {
+    .species = SPECIES_ELECTIVIRE,
+    .lvl = 34,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PLASMA_FISTS,
+     MOVE_CLOSE_COMBAT,
+     MOVE_ICE_PUNCH,
+     MOVE_MACH_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Drifblim
+    {
+    .species = SPECIES_DRIFBLIM,
+    .lvl = 34,
+    .heldItem = ITEM_ELECTRIC_SEED,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_AIR_SLASH,
+     MOVE_CALM_MIND,
+     MOVE_SHADOW_BALL
+     MOVE_THUNDERBOLT
+    },
+    .ivs = {31, 31, 31, 30, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Unburden
+    .friendship = 255,
+    },
+    //Kilowattrel
+    {
+    .species = SPECIES_KILOWATTREL,
+    .lvl = 34,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_AIR_SLASH,
+     MOVE_RISING_VOLTAGE,
+     MOVE_VOLT_SWITCH,
+     MOVE_HIDDEN_POWER //HP Ice
+    },
+    .ivs = {31, 31, 31, 31, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Competitive
+    .friendship = 255,
+    },
+    //Alola Raichu
+    {
+    .species = SPECIES_RAICHU_ALOLAN,
+    .lvl = 34,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_NASTY_PLOT,
+     MOVE_SURF,
+     MOVE_RISING_VOLTAGE,
+     MOVE_PSYSHOCK
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Surge Surfer
+    .friendship = 255,
+    },
+    //Mega Ampharos
+    {
+    .species = SPECIES_AMPHAROS, //Mega turn 1
+    .lvl = 34,
+    .heldItem = ITEM_AMPHAROSITE,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_RISING_VOLTAGE,
+     MOVE_DRAGON_PULSE,
+     MOVE_TAIL_GLOW,
+     MOVE_HIDDEN_POWER //HP Ice
+    },
+    .ivs = {31, 31, 31, 31, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Static -> Mold Breaker When Mega
+    .friendship = 255,
+    },
+};
+//Flannery Section
+static const struct DynasticTrainer sParty_Flannery1[] = {
+    //Infernape
+    {
+    .species = SPECIES_INFERNAPE,
+    .lvl = 42,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PYRO_BALL,
+     MOVE_DRAIN_PUNCH,
+     MOVE_STEALTH_ROCK,
+     MOVE_THUNDER_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Sunflora
+    {
+    .species = SPECIES_SUNFLORA,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_FLAMETHROWER,
+     MOVE_GROWTH,
+     MOVE_EARTH_POWER,
+     MOVE_SOLAR_BEAM
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 252, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Chlorophyll
+    .friendship = 255,
+    },
+    //Cinderace
+    {
+    .species = SPECIES_CINDERACE,
+    .lvl = 42,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PYRO_BALL,
+     MOVE_HIGH_JUMP_KICK,
+     MOVE_IRON_HEAD,
+     MOVE_THUNDER_PUNCH
+    },
+    .ivs = {31, 31, 31, 30, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 252, 0, 0, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Libero
+    .friendship = 255,
+    },
+    //Skeledirge
+    {
+    .species = SPECIES_SKELEDIRGE,
+    .lvl = 42,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_CALM,
+    .moves =
+    {
+     MOVE_HEX,
+     MOVE_WILL_O_WISP,
+     MOVE_TORCH_SONG,
+     MOVE_SLACK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {252, 0, 0, 252, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Unaware
+    .friendship = 255,
+    },
+    //Charizard
+    {
+    .species = SPECIES_CHARIZARD,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_FLAMETHROWER,
+     MOVE_SOLAR_BEAM,
+     MOVE_AIR_SLASH,
+     MOVE_SCORCHING_SANDS
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 252, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Solar Power
+    .friendship = 255,
+    },
+    //Typhlosion
+    {
+    .species = SPECIES_TYPHLOSION,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_ERUPTION,
+     MOVE_SCORCHING_SANDS,
+     MOVE_SOLAR_BEAM,
+     MOVE_FOCUS_BLAST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 252, 0, 252}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Blazing Soul
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_FlanneryNoEvs1[] = {
+    //Infernape
+    {
+    .species = SPECIES_INFERNAPE,
+    .lvl = 42,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PYRO_BALL,
+     MOVE_DRAIN_PUNCH,
+     MOVE_STEALTH_ROCK,
+     MOVE_THUNDER_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Iron Fist
+    .friendship = 255,
+    },
+    //Sunflora
+    {
+    .species = SPECIES_SUNFLORA,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_FLAMETHROWER,
+     MOVE_GROWTH,
+     MOVE_EARTH_POWER,
+     MOVE_SOLAR_BEAM
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Chlorophyll
+    .friendship = 255,
+    },
+    //Cinderace
+    {
+    .species = SPECIES_CINDERACE,
+    .lvl = 42,
+    .heldItem = ITEM_FOCUS_SASH,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PYRO_BALL,
+     MOVE_HIGH_JUMP_KICK,
+     MOVE_IRON_HEAD,
+     MOVE_THUNDER_PUNCH
+    },
+    .ivs = {31, 31, 31, 30, 31, 30}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Libero
+    .friendship = 255,
+    },
+    //Skeledirge
+    {
+    .species = SPECIES_SKELEDIRGE,
+    .lvl = 42,
+    .heldItem = ITEM_LEFTOVERS,
+    .nature = NATURE_CALM,
+    .moves =
+    {
+     MOVE_HEX,
+     MOVE_WILL_O_WISP,
+     MOVE_TORCH_SONG,
+     MOVE_SLACK_OFF
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Unaware
+    .friendship = 255,
+    },
+    //Charizard
+    {
+    .species = SPECIES_CHARIZARD,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_FLAMETHROWER,
+     MOVE_SOLAR_BEAM,
+     MOVE_AIR_SLASH,
+     MOVE_SCORCHING_SANDS
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Solar Power
+    .friendship = 255,
+    },
+    //Typhlosion
+    {
+    .species = SPECIES_TYPHLOSION,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_ERUPTION,
+     MOVE_SCORCHING_SANDS,
+     MOVE_SOLAR_BEAM,
+     MOVE_FOCUS_BLAST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Blazing Soul
+    .friendship = 255,
+    },
+};
+
+static const struct DynasticTrainer sParty_FlanneryHardcore1[] = {
+    //Emboar
+    {
+    .species = SPECIES_EMBOAR,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_PYRO_BALL,
+     MOVE_EARTHQUAKE,
+     MOVE_SWORDS_DANCE,
+     MOVE_THUNDER_PUNCH
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Sheer Force
+    .friendship = 255,
+    },
+    //Heliolisk
+    {
+    .species = SPECIES_HELIOLISK,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_FLAMETHROWER,
+     MOVE_THUNDERBOLT,
+     MOVE_HYPER_VOICE,
+     MOVE_GRASS_KNOT
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Solar Power
+    .friendship = 255,
+    },
+    //Tropius
+    {
+    .species = SPECIES_TROPIUS,
+    .lvl = 42,
+    .heldItem = ITEM_DRAGON_GEM,
+    .nature = NATURE_MODEST,
+    .moves =
+    {
+     MOVE_DRAGON_PULSE,
+     MOVE_SOLAR_BEAM,
+     MOVE_GROWTH,
+     MOVE_FLAME_BURST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 2, //Chlorophyll
+    .friendship = 255,
+    },
+    //Galar Darmanitan Zen
+    {
+    .species = SPECIES_DARMANITAN,
+    .lvl = 42,
+    .heldItem = ITEM_FIRIUM_Z,
+    .nature = NATURE_JOLLY,
+    .moves =
+    {
+     MOVE_FLARE_BLITZ,
+     MOVE_ICICLE_CRASH,
+     MOVE_EARTHQUAKE,
+     MOVE_STONE_EDGE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Zen Mode
+    .friendship = 255,
+    },
+    //Typhlosion
+    {
+    .species = SPECIES_TYPHLOSION,
+    .lvl = 42,
+    .heldItem = ITEM_LIFE_ORB,
+    .nature = NATURE_TIMID,
+    .moves =
+    {
+     MOVE_ERUPTION,
+     MOVE_SCORCHING_SANDS,
+     MOVE_SOLAR_BEAM,
+     MOVE_FOCUS_BLAST
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 3, //Blazing Soul
+    .friendship = 255,
+    },
+    //Mega Charizard X
+    {
+    .species = SPECIES_CHARIZARD, //Mega turn 1
+    .lvl = 42,
+    .heldItem = ITEM_CHARIZARDITE_X,
+    .nature = NATURE_NAIVE,
+    .moves =
+    {
+     MOVE_FLARE_BLITZ,
+     MOVE_DRAGON_DANCE,
+     MOVE_SOLAR_BEAM,
+     MOVE_EARTHQUAKE
+    },
+    .ivs = {31, 31, 31, 31, 31, 31}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .evs = {0, 0, 0, 0, 0, 0}, //HP, ATK, DEF, SpATK, SpDEF, SPEED.
+    .ability = 1, //Blaze -> Tough Claws
+    .friendship = 255,
+    },
 };
 
 static const struct DynasticTrainer sParty_Norman1[] = {
@@ -9713,158 +11062,6 @@ static const struct DynasticTrainer sParty_MayRustboroTorchic[] = {
  
     .lvl = 15,
     .species = SPECIES_MUDKIP,
-    }
-};
-
-static const struct DynasticTrainer sParty_Roxanne2[] = {
-    {
- 
-    .lvl = 32,
-    .species = SPECIES_GOLEM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
-    },
-    {
- 
-    .lvl = 35,
-    .species = SPECIES_KABUTO,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 35,
-    .species = SPECIES_ONIX,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 37,
-    .species = SPECIES_NOSEPASS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
-    }
-};
-
-static const struct DynasticTrainer sParty_Roxanne3[] = {
-    {
- 
-    .lvl = 37,
-    .species = SPECIES_OMANYTE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
-    },
-    {
- 
-    .lvl = 37,
-    .species = SPECIES_GOLEM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
-    },
-    {
- 
-    .lvl = 40,
-    .species = SPECIES_KABUTOPS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 40,
-    .species = SPECIES_ONIX,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 42,
-    .species = SPECIES_NOSEPASS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
-    }
-};
-
-static const struct DynasticTrainer sParty_Roxanne4[] = {
-    {
- 
-    .lvl = 42,
-    .species = SPECIES_OMASTAR,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
-    },
-    {
- 
-    .lvl = 42,
-    .species = SPECIES_GOLEM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
-    },
-    {
- 
-    .lvl = 45,
-    .species = SPECIES_KABUTOPS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 45,
-    .species = SPECIES_ONIX,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 47,
-    .species = SPECIES_NOSEPASS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
-    }
-};
-
-static const struct DynasticTrainer sParty_Roxanne5[] = {
-    {
- 
-    .lvl = 47,
-    .species = SPECIES_AERODACTYL,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROCK_SLIDE, MOVE_HYPER_BEAM, MOVE_SUPERSONIC, MOVE_PROTECT}
-    },
-    {
- 
-    .lvl = 47,
-    .species = SPECIES_GOLEM,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_PUNCH, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
-    },
-    {
- 
-    .lvl = 47,
-    .species = SPECIES_OMASTAR,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ICE_BEAM, MOVE_ROCK_SLIDE, MOVE_SURF}
-    },
-    {
- 
-    .lvl = 50,
-    .species = SPECIES_KABUTOPS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_SWORDS_DANCE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 50,
-    .species = SPECIES_STEELIX,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_IRON_TAIL, MOVE_EXPLOSION, MOVE_ROAR, MOVE_ROCK_SLIDE}
-    },
-    {
- 
-    .lvl = 52,
-    .species = SPECIES_NOSEPASS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_EXPLOSION, MOVE_PROTECT, MOVE_ROCK_SLIDE}
     }
 };
 

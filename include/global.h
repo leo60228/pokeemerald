@@ -509,6 +509,7 @@ struct SaveBlock2
     /*0x18*/ struct Pokedex pokedex;
              u8 levelCaps; // Various options for level caps
              u8 chosenStarter;
+             u16 enableEvs:1;
     /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;

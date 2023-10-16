@@ -9652,7 +9652,7 @@ const struct Item gItems[] =
 
     [ITEM_INFINATE_CANDY] =
     {
-        .name = _("InfinateCandy"),
+        .name = _("InfiniteCandy"),
         .price = 0,
         .description = sInfinateCandyDesc,
         .pocket = POCKET_KEY_ITEMS,

@@ -77,7 +77,12 @@ struct DynasticTrainer
 struct Trainer
 {
     /*0x00*/ u32 aiFlags;
+             u8 partySize;
              const struct DynasticTrainer *party;
+             u8 partySizeNoEvs;
+             const struct DynasticTrainer *partyNoEvs;
+             u8 partySizeHardcore;
+             const struct DynasticTrainer *partyHardcore;
     /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
     /*0x10*/ u8 trainerClass;
     /*0x11*/ u8 encounterMusic_gender; // last bit is gender

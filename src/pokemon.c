@@ -4354,6 +4354,36 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
+    if(B_PERFECT_IVS == TRUE){
+        //Ivs are Disabled
+        hpIV 		= 31;
+		attackIV 	= 31;
+		defenseIV 	= 31;
+		spAttackIV 	= 31;
+		spDefenseIV = 31;
+		speedIV 	= 31;
+    }
+
+    if (EVS_MODE == TRUE && !DIFFICULTY_KAIZO){
+        //Evs are Enabled besides Hardcore mode thats always locked on NoEvs Mode.
+        hpEV 		= 252;
+		attackEV 	= 252;
+		defenseEV 	= 252;
+		spAttackEV 	= 252;
+		spDefenseEV = 252;
+		speedEV 	= 252;
+    }
+    
+    if (!NO_EVS_MODE && !DIFFICULTY_KAIZO){
+        //Evs are Disabled & Makes Hardcore mode always locked on NoEvs Mode.
+        hpEV 		= 0;
+		attackEV 	= 0;
+		defenseEV 	= 0;
+		spAttackEV 	= 0;
+		spDefenseEV = 0;
+		speedEV 	= 0;
+    }
+
     if (species == SPECIES_SHEDINJA)
     {
         newMaxHP = 1;
@@ -8650,17 +8680,41 @@ u8 GetLevelCap(void)
     u8 levelCapSetting = gSaveBlock2Ptr->levelCaps;
     u16 currentBadge = getHighestBadge();
 
-    static const u8 levelCapsDynastic[] = {16, 26, 32, 42, 50, 55, 62, 75, 85, 85}; // Level Caps
+    static const u8 levelCapsEasy[] = {18, 28, 36, 44, 52, 62, 72, 82, 88, 88}; // Level Caps for Easy Mode
+    static const u8 levelCapsNormal[] = {16, 26, 36, 42, 50, 60, 70, 80, 85, 85}; // Level Caps for Normal Mode
+    static const u8 levelCapsHardcore[] = {16, 26, 36, 42, 50, 60, 70, 80, 85, 85}; // Level Caps for Hardcore Mode
 
     switch (levelCapSetting)
     {
     default:
+    case LEVEL_CAPS_EASY:
+        currentLevelCap = levelCapsEasy[currentBadge];
     case LEVEL_CAPS_DYNASTIC:
-        currentLevelCap = levelCapsDynastic[currentBadge];
+        currentLevelCap = levelCapsNormal[currentBadge];
+    case LEVEL_CAPS_HARDCORE:
+        currentLevelCap = levelCapsHardcore[currentBadge];
     }
     return currentLevelCap;
 
-    gSaveBlock2Ptr->levelCaps = GetLevelCap();
+    //gSaveBlock2Ptr->levelCaps = GetLevelCap(); //this can be deleted if not usable. im just keeping it here cause i might find another use for it.
+}
+
+u8 GetNoEvs(void) //Set NoEvs Mode
+{
+   u8 NoEvs;
+   u8 NoEvsSettings = gSaveBlock2Ptr->enableEvs;
+
+   static const u8 enableEvsOn[] = {EVS_MODE == TRUE && NO_EVS_MODE == FALSE};
+   static const u8 enableEvsOff[] = {NO_EVS_MODE == TRUE && EVS_MODE == FALSE};
+
+   switch (NoEvsSettings)
+   {
+   case EVS_MODE:
+       NoEvs = enableEvsOn[];
+   case NO_EVS_MODE:
+       NoEvs = enableEvsOff[];
+    break;
+   }
 }
 
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)

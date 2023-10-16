@@ -226,4 +226,7 @@
 #define B_NEW_IMPACT_PALETTE            TRUE    // If set to TRUE, it updates the basic 'hit' palette.
 #define B_NEW_SURF_PARTICLE_PALETTE     TRUE    // If set to TRUE, it updates Surf's wave palette.
 
+
+#define B_PERFECT_IVS         			TRUE    // If set to TRUE, the stat calculation makes it as if the Pokemon has perfect Ivs.
+
 #endif // GUARD_CONFIG_BATTLE_H

@@ -2043,16 +2043,50 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
-        u32 nameHash = 0;
+    u32 nameHash = 0;
     u32 personalityValue;
     u8 fixedIV;
     s32 i, j = 0;
     u8 monsCount;
     u8 level;
+    u8 pp;
     u8 friendship;
     u8 difficultySetting = gSaveBlock2Ptr->gameDifficulty;
-    u8 partyData;
-    
+    u8 NoEvsSettings = gSaveBlock2Ptr->enableEvs;
+	u8 DoubleReady = GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS;
+    u8 enemyPartySize = gTrainers[trainerNum].partySize;
+        
+    u16 move = 1;
+    u16 species = 1;
+
+    if(DoubleReady || gTrainers[trainerNum].doubleBattle){
+        //Doubles Battle Sections
+        if(gTrainers[trainerNum].partySizeDouble != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeDouble;
+        //Easy Mode Section
+        else if(difficultySetting == DIFFICULTY_EASY && gTrainers[trainerNum].partySizeNoEvs != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeNoEvs; //Sets Easy Mode
+        else if(difficultySetting == DIFFICULTY_EASY || NoEvsSettings = NO_EVS_MODE && gTrainers[trainerNum].partySizeNoEvs != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeNoEvs; //Sets Easy + NoEvs Mode
+        //Hardcore Mode Section
+        else if(difficultySetting == DIFFICULTY_KAIZO && gTrainers[trainerNum].partySizeHardcore != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeHardcore; //Sets Hardcore Mode
+        else if(difficultySetting == DIFFICULTY_KAIZO || NoEvsSettings = NO_EVS_MODE && gTrainers[trainerNum].partySizeHardcoreNoEvs != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeHardcoreNoEvs; //Sets Hardcore + NoEvs Mode
+        //Normal Mode Section
+        else if (difficultySetting == DIFFICULTY_DYNASTIC && gTrainers[trainerNum].partySize != 0)
+            enemyPartySize = gTrainers[trainerNum].partySize; //Sets Normal
+          else if(difficultySetting == DIFFICULTY_DYNASTIC || NoEvsSettings = NO_EVS_MODE && gTrainers[trainerNum].partySizeNoEvs != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeNoEvs; //Sets Normal + NoEvs Mode
+    }
+else{
+        // In singles if you are on Hardcore mode the game will try to use an Hardcore Party if there is no exclusive party it uses the normal one
+        if(difficultySetting == DIFFICULTY_KAIZO && gTrainers[trainerNum].partySizeHardcore != 0)
+            enemyPartySize = gTrainers[trainerNum].partySizeHardcore;
+        else
+            enemyPartySize = gTrainers[trainerNum].partySize;
+    }
+
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;

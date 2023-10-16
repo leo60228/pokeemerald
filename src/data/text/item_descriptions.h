@@ -543,7 +543,7 @@ static const u8 sRareCandyDesc[] = _(
 static const u8 sInfinateCandyDesc[] = _(
     "Raises the level\n"
     "of a Pokémon.\n"
-    "Infinate Uses.");
+    "Infinite Uses.");
 
 static const u8 sExpCandyXSDesc[] = _(
     "Gives a very small\n"

@@ -169,11 +169,16 @@
 #define CONNECTION_DIVE     5
 #define CONNECTION_EMERGE   6
 
-#define DIFFICULTY_DYNASTIC   0
-#define DIFFICULTY_KAIZO      1
+#define DIFFICULTY_EASY       0
+#define DIFFICULTY_DYNASTIC   1
+#define DIFFICULTY_KAIZO      2
 
-#define LEVEL_CAPS_DYNASTIC    0
-#define LEVEL_CAPS_OFF         1
+#define LEVEL_CAPS_EASY        0
+#define LEVEL_CAPS_DYNASTIC    1
+#define LEVEL_CAPS_HARDCORE    2
+
+#define EVS_MODE                  0
+#define NO_EVS_MODE               1
 
 #define STARTER_MON_COUNT_HOENN      0
 #define STARTER_MON_COUNT_KANTO      1

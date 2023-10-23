@@ -8078,7 +8078,7 @@ const u32 gMonFrontPic_GimmighoulRoaming[] = INCBIN_U32("graphics/pokemon/gimmig
 const u32 gMonPalette_GimmighoulRoaming[] = INCBIN_U32("graphics/pokemon/gimmighoul/roaming/normal.gbapal.lz");
 const u32 gMonBackPic_GimmighoulRoaming[] = INCBIN_U32("graphics/pokemon/gimmighoul/roaming/back.4bpp.lz");
 const u32 gMonShinyPalette_GimmighoulRoaming[] = INCBIN_U32("graphics/pokemon/gimmighoul/roaming/shiny.gbapal.lz");
-// const u8 gMonIcon_GimmighoulRoaming[] = INCBIN_U8("graphics/pokemon/gimmighoul/icon.4bpp");
+const u8 gMonIcon_GimmighoulRoaming[] = INCBIN_U8("graphics/pokemon/gimmighoul/icon.4bpp");
 
 const u32 gMonFrontPic_Gholdengo[] = INCBIN_U32("graphics/pokemon/gholdengo/front.4bpp.lz");
 const u32 gMonPalette_Gholdengo[] = INCBIN_U32("graphics/pokemon/gholdengo/normal.gbapal.lz");
@@ -8147,13 +8147,13 @@ const u32 gMonFrontPic_WalkingWake[] = INCBIN_U32("graphics/pokemon/walking_wake
 const u32 gMonPalette_WalkingWake[] = INCBIN_U32("graphics/pokemon/walking_wake/normal.gbapal.lz");
 const u32 gMonBackPic_WalkingWake[] = INCBIN_U32("graphics/pokemon/walking_wake/back.4bpp.lz");
 const u32 gMonShinyPalette_WalkingWake[] = INCBIN_U32("graphics/pokemon/walking_wake/shiny.gbapal.lz");
-// const u8 gMonIcon_WalkingWake[] = INCBIN_U8("graphics/pokemon/walking_wake/icon.4bpp");
+const u8 gMonIcon_WalkingWake[] = INCBIN_U8("graphics/pokemon/walking_wake/icon.4bpp");
 // const u8 gMonFootprint_WalkingWake[] = INCBIN_U8("graphics/pokemon/walking_wake/footprint.1bpp");
 
 const u32 gMonFrontPic_IronLeaves[] = INCBIN_U32("graphics/pokemon/iron_leaves/front.4bpp.lz");
 const u32 gMonPalette_IronLeaves[] = INCBIN_U32("graphics/pokemon/iron_leaves/normal.gbapal.lz");
 const u32 gMonBackPic_IronLeaves[] = INCBIN_U32("graphics/pokemon/iron_leaves/back.4bpp.lz");
 const u32 gMonShinyPalette_IronLeaves[] = INCBIN_U32("graphics/pokemon/iron_leaves/shiny.gbapal.lz");
-// const u8 gMonIcon_IronLeaves[] = INCBIN_U8("graphics/pokemon/iron_leaves/icon.4bpp");
+const u8 gMonIcon_IronLeaves[] = INCBIN_U8("graphics/pokemon/iron_leaves/icon.4bpp");
 // const u8 gMonFootprint_IronLeaves[] = INCBIN_U8("graphics/pokemon/iron_leaves/footprint.1bpp");
 #endif
